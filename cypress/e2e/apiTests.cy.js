@@ -77,7 +77,7 @@ function generateEmail(domain = 'yopmail.com') {
                 });
               });
 
-  it.only("Blackmarket - Login", () => {
+  it("Blackmarket - Login", () => {
                 cy.api("POST", "/api/v1/users/sign_in", {
                   
                         "user": {
@@ -101,7 +101,7 @@ function generateEmail(domain = 'yopmail.com') {
                       expect(response.body.data.image).to.eq(null);
                     });
                   });
-  it.only('Blackmarket - Logout',() => {
+  it('Blackmarket - Logout',() => {
     const accessToken = Cypress.env('accessToken')
       cy.api({
         method: 'DELETE',
